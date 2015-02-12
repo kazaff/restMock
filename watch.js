@@ -12,7 +12,7 @@ Cluster.setupMaster({
 var worker = Cluster.fork();
 
 //监控指定目录
-FS.watch(Config.target,function(event, filename){
+FS.watch(Config.target, function(event, filename){
     worker.kill();
     worker = Cluster.fork();
 });
